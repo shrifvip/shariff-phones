@@ -28,7 +28,7 @@ export default function App() {
     });
   }, [query, filters]);
 
-  const whatsappNumber = '353871234567'; // TODO: replace with your real number
+  const whatsappNumber = '353852592710'; // TODO: replace with your real number
   const whatsappLink = (p) => {
     const text = encodeURIComponent(`Hi Shariff, I'm interested in ${p.name} ${p.storage} (${p.grade}, ${p.color}) for ${formatPrice(p.price, currency)}. Is it available?`);
     return `https://wa.me/${whatsappNumber}?text=${text}`;
