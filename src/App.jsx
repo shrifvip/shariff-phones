@@ -189,6 +189,20 @@ export default function App() {
           <div className="md:text-right">© {new Date().getFullYear()} Shariff Phones. All rights reserved.</div>
         </div>
       </footer>
-    </div>
+    </div>  </div>
+  {/* Floating WhatsApp button */}
+  <a
+    href={`https://wa.me/353852592710?text=${encodeURIComponent("Hi Shariff, I’m interested in your refurbished iPhones.")}`}
+    className="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center h-14 w-14 rounded-full bg-emerald-600 hover:bg-emerald-500 shadow-lg animate-pulse"
+    aria-label="Chat on WhatsApp"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.89 11.89 0 0 0 12.06 0C5.46 0 .09 5.37.09 12c0 2.12.55 4.19 1.6 6.02L0 24l6.15-1.6A12 12 0 0 0 12.06 24c6.6 0 11.97-5.37 11.97-12 0-3.2-1.25-6.21-3.51-8.52ZM12.06 22a9.9 9.9 0 0 1-5.04-1.38l-.36-.2-3.65.95.98-3.56-.24-.37A9.98 9.98 0 1 1 22.06 12 9.99 9.99 0 0 1 12.06 22Zm5.65-7.47c-.31-.16-1.84-.9-2.13-1-.29-.11-.5-.16-.71.16-.21.31-.82 1-.99 1.21-.18.21-.36.23-.67.08-.31-.16-1.33-.49-2.54-1.57-.94-.83-1.58-1.87-1.77-2.19-.18-.31-.02-.48.14-.63.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.26-.63-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.39s-1.1 1.07-1.1 2.6 1.13 3.01 1.29 3.21c.16.21 2.24 3.41 5.42 4.78.76.33 1.35.52 1.81.66.76.24 1.46.21 2.01.13.61-.09 1.84-.75 2.1-1.48.26-.73.26-1.35.18-1.48-.08-.13-.29-.21-.6-.36Z"/>
+    </svg>
+  </a>
+}
+
   );
 }
