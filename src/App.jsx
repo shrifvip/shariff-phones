@@ -6,6 +6,13 @@ import {
   Truck, MessageCircle, Star, CheckCircle2, ShoppingCart
 } from 'lucide-react';
 
+const CURRENCIES = {
+  EUR: { symbol: '€', rate: 1 },
+  GBP: { symbol: '£', rate: 0.85 },
+  USD: { symbol: '$', rate: 1.07 },
+};
+
+// Using placeholder images so you don't need to upload files.
 const PRODUCTS = [
   {
     id: 'ip15-128-black-a',
@@ -48,6 +55,7 @@ const PRODUCTS = [
     img: 'https://dummyimage.com/800x1000/111/ffffff&text=iPhone+12+128GB',
   },
 ];
+
 function formatPrice(eur, currency) {
   const { symbol, rate } = CURRENCIES[currency];
   const val = Math.round(eur * rate);
@@ -58,7 +66,7 @@ export default function App() {
   const whatsappNumber = '353852592710';
   const [query, setQuery] = useState('');
   const [currency, setCurrency] = useState('EUR');
-  const [filters, setFilters] = useState({ model: 'All', storage: 'All', grade: 'All' });
+  const [filters] = useState({ model: 'All', storage: 'All', grade: 'All' });
 
   const models = useMemo(() => ['All', ...Array.from(new Set(PRODUCTS.map(p => p.name)))], []);
   const storages = useMemo(() => ['All', ...Array.from(new Set(PRODUCTS.map(p => p.storage)))], []);
@@ -67,12 +75,12 @@ export default function App() {
   const filtered = useMemo(() => {
     return PRODUCTS.filter(p => {
       const matchesText = [p.name, p.storage, p.grade, p.color].join(' ').toLowerCase().includes(query.toLowerCase());
-      const modelOk = filters.model === 'All' || p.name === filters.model;
-      const storageOk = filters.storage === 'All' || p.storage === filters.storage;
-      const gradeOk = filters.grade === 'All' || p.grade === filters.grade;
+      const modelOk = true; // all for now
+      const storageOk = true;
+      const gradeOk = true;
       return matchesText && modelOk && storageOk && gradeOk;
     });
-  }, [query, filters]);
+  }, [query]);
 
   const whatsappLink = (p) => {
     const text = encodeURIComponent(
