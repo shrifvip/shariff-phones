@@ -1,18 +1,73 @@
+// src/App.jsx
 import React, { useMemo, useState } from 'react';
 import './index.css';
-import { PRODUCTS, CURRENCIES } from './data';
 import {
   Smartphone, Search, Filter, ShieldCheck,
   Truck, MessageCircle, Star, CheckCircle2, ShoppingCart
 } from 'lucide-react';
 
+/* ===========================
+   Inline Data (images included)
+   =========================== */
+const CURRENCIES = {
+  EUR: { symbol: '€', rate: 1 },
+  GBP: { symbol: '£', rate: 0.85 },
+  USD: { symbol: '$', rate: 1.07 },
+};
+
+const PRODUCTS = [
+  {
+    id: 'ip15-128-black-a',
+    name: 'iPhone 15',
+    storage: '128GB',
+    grade: 'A',
+    color: 'Black',
+    price: 650,
+    was: 799,
+    img: 'https://images.unsplash.com/photo-1695048139040-8a6e2e6e4b0c?q=80&w=1200&auto=format&fit=crop',
+  },
+  {
+    id: 'ip14-128-blue-a',
+    name: 'iPhone 14',
+    storage: '128GB',
+    grade: 'A',
+    color: 'Blue',
+    price: 530,
+    was: 649,
+    img: 'https://images.unsplash.com/photo-1661961112951-d8a9e1808c56?q=80&w=1200&auto=format&fit=crop',
+  },
+  {
+    id: 'ip13-256-starlight-a',
+    name: 'iPhone 13',
+    storage: '256GB',
+    grade: 'A',
+    color: 'Starlight',
+    price: 470,
+    was: 599,
+    img: 'https://images.unsplash.com/photo-1630163153781-b1f93a4668a8?q=80&w=1200&auto=format&fit=crop',
+  },
+  {
+    id: 'ip12-128-purple-b',
+    name: 'iPhone 12',
+    storage: '128GB',
+    grade: 'B',
+    color: 'Purple',
+    price: 380,
+    was: 499,
+    img: 'https://images.unsplash.com/photo-1611078489935-0cb9649b0081?q=80&w=1200&auto=format&fit=crop',
+  },
+];
+
+/* =============== Helpers =============== */
 function formatPrice(eur, currency) {
   const { symbol, rate } = CURRENCIES[currency];
   const val = Math.round(eur * rate);
   return `${symbol}${val.toLocaleString()}`;
 }
 
+/* =============== App =================== */
 export default function App() {
+  // WhatsApp number (digits only)
   const whatsappNumber = '353852592710';
 
   const [query, setQuery] = useState('');
