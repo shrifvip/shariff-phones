@@ -29,7 +29,7 @@ export default function App() {
   }, [query, filters]);
 
   const whatsappNumber = '353852592710';
-  const whatsappLink = (p) => {
+const whatsappLink = (p) => { ... }
     const text = encodeURIComponent(`Hi Shariff, I'm interested in ${p.name} ${p.storage} (${p.grade}, ${p.color}) for ${formatPrice(p.price, currency)}. Is it available?`);
     return `https://wa.me/${whatsappNumber}?text=${text}`;
   };
