@@ -6,9 +6,6 @@ import {
   Truck, MessageCircle, Star, CheckCircle2, ShoppingCart
 } from 'lucide-react';
 
-/* ===========================
-   Inline Data (images included)
-   =========================== */
 const CURRENCIES = {
   EUR: { symbol: '€', rate: 1 },
   GBP: { symbol: '£', rate: 0.85 },
@@ -24,7 +21,7 @@ const PRODUCTS = [
     color: 'Black',
     price: 650,
     was: 799,
-    img: 'https://cdn.pixabay.com/photo/2023/09/26/10/55/iphone-15-pro-8275511_1280.jpg',
+    img: '/images/iphone15.jpg',
   },
   {
     id: 'ip14-128-blue-a',
@@ -34,7 +31,7 @@ const PRODUCTS = [
     color: 'Blue',
     price: 530,
     was: 649,
-    img: 'https://cdn.pixabay.com/photo/2022/09/13/14/14/iphone-14-7451947_1280.jpg',
+    img: '/images/iphone14.jpg',
   },
   {
     id: 'ip13-256-starlight-a',
@@ -44,7 +41,7 @@ const PRODUCTS = [
     color: 'Starlight',
     price: 470,
     was: 599,
-    img: 'https://cdn.pixabay.com/photo/2021/09/24/18/12/iphone-13-6654369_1280.jpg',
+    img: '/images/iphone13.jpg',
   },
   {
     id: 'ip12-128-purple-b',
@@ -54,22 +51,18 @@ const PRODUCTS = [
     color: 'Purple',
     price: 380,
     was: 499,
-    img: 'https://cdn.pixabay.com/photo/2021/02/04/16/38/iphone-12-5982449_1280.jpg',
+    img: '/images/iphone12.jpg',
   },
 ];
 
-/* =============== Helpers =============== */
 function formatPrice(eur, currency) {
   const { symbol, rate } = CURRENCIES[currency];
   const val = Math.round(eur * rate);
   return `${symbol}${val.toLocaleString()}`;
 }
 
-/* =============== App =================== */
 export default function App() {
-  // WhatsApp number (digits only)
   const whatsappNumber = '353852592710';
-
   const [query, setQuery] = useState('');
   const [currency, setCurrency] = useState('EUR');
   const [filters, setFilters] = useState({ model: 'All', storage: 'All', grade: 'All' });
@@ -142,10 +135,13 @@ export default function App() {
         <section className="bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950">
           <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-semibold leading-tight">Premium Refurbished iPhones
+              <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+                Premium Refurbished iPhones
                 <span className="block text-emerald-400">Fully Tested • Warranty • Best Value</span>
               </h1>
-              <p className="mt-4 text-neutral-300">Save up to 40% vs new. Unlocked, battery health checked, 14-day returns, and 6-month warranty as standard.</p>
+              <p className="mt-4 text-neutral-300">
+                Save up to 40% vs new. Unlocked, battery health checked, 14-day returns, and 6-month warranty as standard.
+              </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a href="#catalog" className="rounded-2xl px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-sm">Shop iPhones</a>
                 <a
