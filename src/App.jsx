@@ -48,9 +48,6 @@ const PRODUCTS = [
     img: 'https://dummyimage.com/800x1000/111/ffffff&text=iPhone+12+128GB',
   },
 ];
-
-
-
 function formatPrice(eur, currency) {
   const { symbol, rate } = CURRENCIES[currency];
   const val = Math.round(eur * rate);
