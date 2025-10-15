@@ -24,7 +24,7 @@ const PRODUCTS = [
     color: 'Black',
     price: 650,
     was: 799,
-    img: 'https://images.unsplash.com/photo-1695048139040-8a6e2e6e4b0c?q=80&w=1200&auto=format&fit=crop',
+    img: 'https://cdn.pixabay.com/photo/2023/09/26/10/55/iphone-15-pro-8275511_1280.jpg',
   },
   {
     id: 'ip14-128-blue-a',
@@ -34,7 +34,7 @@ const PRODUCTS = [
     color: 'Blue',
     price: 530,
     was: 649,
-    img: 'https://images.unsplash.com/photo-1661961112951-d8a9e1808c56?q=80&w=1200&auto=format&fit=crop',
+    img: 'https://cdn.pixabay.com/photo/2022/09/13/14/14/iphone-14-7451947_1280.jpg',
   },
   {
     id: 'ip13-256-starlight-a',
@@ -44,7 +44,7 @@ const PRODUCTS = [
     color: 'Starlight',
     price: 470,
     was: 599,
-    img: 'https://images.unsplash.com/photo-1630163153781-b1f93a4668a8?q=80&w=1200&auto=format&fit=crop',
+    img: 'https://cdn.pixabay.com/photo/2021/09/24/18/12/iphone-13-6654369_1280.jpg',
   },
   {
     id: 'ip12-128-purple-b',
@@ -54,7 +54,7 @@ const PRODUCTS = [
     color: 'Purple',
     price: 380,
     was: 499,
-    img: 'https://images.unsplash.com/photo-1611078489935-0cb9649b0081?q=80&w=1200&auto=format&fit=crop',
+    img: 'https://cdn.pixabay.com/photo/2021/02/04/16/38/iphone-12-5982449_1280.jpg',
   },
 ];
 
