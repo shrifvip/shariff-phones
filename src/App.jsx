@@ -6,12 +6,6 @@ import {
   Truck, MessageCircle, Star, CheckCircle2, ShoppingCart
 } from 'lucide-react';
 
-const CURRENCIES = {
-  EUR: { symbol: '€', rate: 1 },
-  GBP: { symbol: '£', rate: 0.85 },
-  USD: { symbol: '$', rate: 1.07 },
-};
-
 const PRODUCTS = [
   {
     id: 'ip15-128-black-a',
@@ -21,7 +15,7 @@ const PRODUCTS = [
     color: 'Black',
     price: 650,
     was: 799,
-    img: '/images/iphone15.jpg',
+    img: 'https://dummyimage.com/800x1000/111/ffffff&text=iPhone+15+128GB',
   },
   {
     id: 'ip14-128-blue-a',
@@ -31,7 +25,7 @@ const PRODUCTS = [
     color: 'Blue',
     price: 530,
     was: 649,
-    img: '/images/iphone14.jpg',
+    img: 'https://dummyimage.com/800x1000/111/ffffff&text=iPhone+14+128GB',
   },
   {
     id: 'ip13-256-starlight-a',
@@ -41,7 +35,7 @@ const PRODUCTS = [
     color: 'Starlight',
     price: 470,
     was: 599,
-    img: '/images/iphone13.jpg',
+    img: 'https://dummyimage.com/800x1000/111/ffffff&text=iPhone+13+256GB',
   },
   {
     id: 'ip12-128-purple-b',
@@ -51,9 +45,11 @@ const PRODUCTS = [
     color: 'Purple',
     price: 380,
     was: 499,
-    img: '/images/iphone12.jpg',
+    img: 'https://dummyimage.com/800x1000/111/ffffff&text=iPhone+12+128GB',
   },
 ];
+
+
 
 function formatPrice(eur, currency) {
   const { symbol, rate } = CURRENCIES[currency];
