@@ -28,11 +28,15 @@ export default function App() {
     });
   }, [query, filters]);
 
-  const whatsappNumber = '353852592710';
-const whatsappLink = (p) => { ... }
-    const text = encodeURIComponent(`Hi Shariff, I'm interested in ${p.name} ${p.storage} (${p.grade}, ${p.color}) for ${formatPrice(p.price, currency)}. Is it available?`);
-    return `https://wa.me/${whatsappNumber}?text=${text}`;
-  };
+ const whatsappNumber = '353852592710'; 
+
+const whatsappLink = (p) => {
+  const text = encodeURIComponent(
+    `Hi Shariff, I'm interested in ${p.name} ${p.storage} (${p.grade}, ${p.color}) for ${formatPrice(p.price, currency)}. Is it available?`
+  );
+  return `https://wa.me/${whatsappNumber}?text=${text}`;
+};
+
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
