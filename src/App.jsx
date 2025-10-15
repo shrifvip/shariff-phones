@@ -120,11 +120,51 @@ export default function App() {
           </div>
         </section>
 
+        {/* Catalog */}
+        <section id="catalog" className="max-w-7xl mx-auto px-4 py-10">
+          <div className="flex items-center gap-3 mb-4">
+            <Filter className="h-5 w-5" />
+            <h2 className="text-xl font-semibold">Shop iPhones</h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {filtered.map(p => (
+              <div key={p.id} className="bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden">
+                <div className="aspect-[4/5] bg-neutral-800 grid place-items-center">
+                  <img src={p.img} alt={`${p.name} ${p.storage}`} className="h-full w-full object-cover" />
+                </div>
+                <div className="p-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="font-medium">{p.name} · {p.storage}</h3>
+                      <p className="text-xs text-neutral-400">Grade {p.grade} · {p.color}</p>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-emerald-400 font-semibold text-lg">{formatPrice(p.price, currency)}</div>
+                      <div className="text-xs line-through text-neutral-500">{formatPrice(p.was, currency)}</div>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex gap-2">
+                    <a href={whatsappLink(p)} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <button className="w-full rounded-2xl px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-sm inline-flex items-center justify-center gap-2">
+                        <MessageCircle className="h-4 w-4" />Enquire
+                      </button>
+                    </a>
+                    <button className="rounded-2xl px-3 py-2 bg-neutral-800 border border-neutral-700">
+                      <ShoppingCart className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Footer */}
         <footer className="border-t border-neutral-800">
           <div className="max-w-7xl mx-auto px-4 py-8 text-sm text-neutral-400 grid md:grid-cols-3 gap-6">
             <div>
-              <div className="flex items-center gap-2 text-white"><Smartphone className="h-4 w-4" />Shariff Phones</div>
+              <div className="flex items-center gap-2 text-white"><Smartphone className="h-4 w-4" /> Shariff Phones</div>
               <p className="mt-2">Dublin, Ireland · Mon–Sat 9:00–18:00</p>
             </div>
             <div>
@@ -136,7 +176,7 @@ export default function App() {
         </footer>
       </div>
 
-      {/* Floating WhatsApp button */}
+      {/* Floating WhatsApp Button */}
       <a
         href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Shariff, I'm interested in your refurbished iPhones.")}`}
         className="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center h-14 w-14 rounded-full bg-emerald-600 hover:bg-emerald-500 shadow-lg animate-pulse"
@@ -150,8 +190,7 @@ export default function App() {
       </a>
     </>
   );
-}// src/data.js
-
+}
 export const CURRENCIES = {
   EUR: { symbol: '€', rate: 1 },
   GBP: { symbol: '£', rate: 0.85 },
@@ -165,7 +204,7 @@ export const PRODUCTS = [
     storage: '128GB',
     grade: 'A',
     color: 'Black',
-    price: 650, // base in EUR
+    price: 650,
     was: 799,
     img: 'https://images.unsplash.com/photo-1695048139040-8a6e2e6e4b0c?q=80&w=1200&auto=format&fit=crop',
   },
@@ -200,4 +239,3 @@ export const PRODUCTS = [
     img: 'https://images.unsplash.com/photo-1611078489935-0cb9649b0081?q=80&w=1200&auto=format&fit=crop',
   },
 ];
-
